@@ -1,6 +1,9 @@
 import ShopingCard from "@/components/ShopingCard";
 
 export default function Home() {
+  //props = podatok sto komponentata go dobiva
+  //state = memorija sto komponenta ja poseduva
+
   return (
     <div>
       <h1> Welcome to NEXT.JS</h1>
