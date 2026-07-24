@@ -14,6 +14,7 @@ export default function FetchsingleUser() {
   useEffect(() => {
     async function fetchUser() {
       try {
+        //!   https://jsonplaceholder.typicode.com/users/
         const response = await fetch(`${USERS_URL}/${userId}`);
         console.log(response);
         if (!response.ok) {

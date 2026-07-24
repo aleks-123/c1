@@ -13,6 +13,7 @@ export default function FetchingUsers() {
   useEffect(() => {
     async function fetchUsers() {
       try {
+        //! https://jsonplaceholder.typicode.com/users
         const response = await fetch(USERS_URL);
         console.log(response);
         if (!response.ok) {
