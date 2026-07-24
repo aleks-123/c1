@@ -1,0 +1,81 @@
+.usersSection {
+  width: min(100%, 620px);
+  padding: 28px;
+  border: 1px solid #dbeafe;
+  border-radius: 20px;
+  background: #ffffff;
+  box-shadow: 0 14px 35px rgba(30, 64, 175, 0.1);
+}
+
+.heading {
+  margin-bottom: 22px;
+}
+
+.eyebrow {
+  margin-bottom: 8px;
+  color: #2563eb;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.heading h2 {
+  color: #172554;
+  font-size: 30px;
+}
+
+.subtitle {
+  margin-top: 6px;
+  color: #64748b;
+}
+
+.status,
+.error {
+  padding: 16px;
+  border-radius: 12px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.status {
+  background: #eff6ff;
+  color: #1d4ed8;
+}
+
+.error {
+  background: #fef2f2;
+  color: #b91c1c;
+}
+
+.userList {
+  display: grid;
+  gap: 12px;
+  list-style: none;
+}
+
+.userCard {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 16px;
+  border: 1px solid #e0e7ff;
+  border-radius: 12px;
+  background: #f8fafc;
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+
+.userCard:hover {
+  border-color: #93c5fd;
+  transform: translateX(4px);
+}
+
+.name {
+  color: #1e3a8a;
+  font-size: 17px;
+}
+
+.email {
+  color: #64748b;
+  font-size: 14px;
+}
