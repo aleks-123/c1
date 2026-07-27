@@ -1,0 +1,185 @@
+.card {
+  padding: 1px;
+  border-radius: 26px;
+  background: linear-gradient(135deg, rgba(129, 140, 248, 0.7), rgba(34, 211, 238, 0.55));
+  box-shadow:
+    0 24px 60px rgba(30, 41, 59, 0.14),
+    0 4px 16px rgba(79, 70, 229, 0.08);
+}
+
+.form {
+  padding: 34px;
+  border-radius: 25px;
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(16px);
+}
+
+.heading {
+  padding-bottom: 24px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.heading h2 {
+  color: #1e293b;
+  font-size: 26px;
+  letter-spacing: -0.02em;
+}
+
+.heading p {
+  margin-top: 7px;
+  color: #64748b;
+  line-height: 1.6;
+}
+
+.fields {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+  margin-top: 26px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.field label {
+  color: #334155;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.field input,
+.field select {
+  width: 100%;
+  min-height: 48px;
+  padding: 0 14px;
+  border: 1px solid #cbd5e1;
+  border-radius: 11px;
+  outline: none;
+  background: #f8fafc;
+  color: #0f172a;
+  font: inherit;
+  transition:
+    border-color 0.15s ease,
+    box-shadow 0.15s ease,
+    background-color 0.15s ease;
+}
+
+.field input::placeholder {
+  color: #94a3b8;
+}
+
+.field input:hover,
+.field select:hover {
+  border-color: #a5b4fc;
+  background: #ffffff;
+}
+
+.field input:focus,
+.field select:focus {
+  border-color: #6366f1;
+  background: #ffffff;
+  box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.13);
+}
+
+.field input.inputError {
+  border-color: #e11d48;
+  background: #fff1f2;
+}
+
+.field input.inputError:focus {
+  border-color: #e11d48;
+  background: #ffffff;
+  box-shadow: 0 0 0 4px rgba(225, 29, 72, 0.13);
+}
+
+.errorMessage {
+  display: block;
+  padding: 7px 10px;
+  border-left: 3px solid #e11d48;
+  border-radius: 0 7px 7px 0;
+  background: #fff1f2;
+  color: #be123c;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.45;
+}
+
+.checkboxField {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  width: fit-content;
+  color: #475569;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.checkbox input {
+  width: 19px;
+  height: 19px;
+  accent-color: #4f46e5;
+  cursor: pointer;
+}
+
+.checkboxError {
+  color: #be123c;
+}
+
+.checkboxError input {
+  outline: 2px solid #fda4af;
+  outline-offset: 2px;
+}
+
+.submitButton {
+  width: 100%;
+  min-height: 50px;
+  margin-top: 28px;
+  border: 0;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #4f46e5, #0891b2);
+  color: #ffffff;
+  font: inherit;
+  font-weight: 800;
+  letter-spacing: 0.01em;
+  cursor: pointer;
+  box-shadow: 0 10px 22px rgba(79, 70, 229, 0.2);
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.submitButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 26px rgba(79, 70, 229, 0.26);
+}
+
+.submitButton:active {
+  transform: translateY(0);
+}
+
+.submitButton:focus-visible {
+  outline: 3px solid #a5b4fc;
+  outline-offset: 3px;
+}
+
+@media (max-width: 560px) {
+  .form {
+    padding: 24px 20px;
+  }
+
+  .fields {
+    grid-template-columns: 1fr;
+  }
+}

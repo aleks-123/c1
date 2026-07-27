@@ -1,0 +1,106 @@
+.card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 20px;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: 0 5px 16px rgba(15, 23, 42, 0.05);
+  transition:
+    transform 0.15s ease,
+    border-color 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  border-color: #a5b4fc;
+  box-shadow: 0 10px 24px rgba(79, 70, 229, 0.1);
+}
+
+.studentInfo {
+  min-width: 0;
+}
+
+.studentInfo h3 {
+  color: #1e293b;
+  font-size: 18px;
+  line-height: 1.35;
+}
+
+.email {
+  margin-top: 4px;
+  overflow-wrap: anywhere;
+  color: #64748b;
+  font-size: 14px;
+}
+
+.course {
+  display: inline-flex;
+  margin-top: 12px;
+  padding: 5px 10px;
+  border-radius: 999px;
+  background: #e0e7ff;
+  color: #4338ca;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.actions {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 12px;
+}
+
+.age {
+  padding: 7px 10px;
+  border-radius: 9px;
+  background: #ecfeff;
+  color: #0e7490;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.deleteButton {
+  padding: 9px 13px;
+  border: 1px solid #fecaca;
+  border-radius: 9px;
+  background: #fff1f2;
+  color: #be123c;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 800;
+  cursor: pointer;
+  transition:
+    background-color 0.15s ease,
+    border-color 0.15s ease,
+    color 0.15s ease;
+}
+
+.deleteButton:hover {
+  border-color: #fb7185;
+  background: #e11d48;
+  color: #ffffff;
+}
+
+.deleteButton:focus-visible {
+  outline: 3px solid #fda4af;
+  outline-offset: 3px;
+}
+
+@media (max-width: 560px) {
+  .card {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .actions {
+    justify-content: space-between;
+  }
+}

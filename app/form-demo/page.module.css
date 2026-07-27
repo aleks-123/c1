@@ -1,0 +1,32 @@
+.page {
+  min-height: 100vh;
+  padding: 72px 24px;
+  color: #172554;
+  background:
+    radial-gradient(circle at 15% 10%, rgba(165, 180, 252, 0.45), transparent 30%),
+    radial-gradient(circle at 85% 85%, rgba(103, 232, 249, 0.32), transparent 28%),
+    linear-gradient(145deg, #eef2ff 0%, #f8fafc 52%, #ecfeff 100%);
+  color-scheme: light;
+}
+
+.intro {
+  width: min(100%, 680px);
+  margin: 0 auto 36px;
+  text-align: center;
+}
+
+.intro h1 {
+  font-size: clamp(36px, 7vw, 58px);
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+}
+
+@media (max-width: 560px) {
+  .page {
+    padding: 48px 16px;
+  }
+
+  .intro {
+    margin-bottom: 28px;
+  }
+}
