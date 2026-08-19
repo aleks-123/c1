@@ -1,6 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
+import styles from "./layout.module.css";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -21,15 +22,55 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
       <body>
-        <header>
-          <nav>
-            <Link href="/">Pocetna </Link>
-            <Link href="/about">Za nas </Link>
-            <Link href="/state-demo">UseState </Link>
+        <header className={styles.header}>
+          <nav className={styles.navigation} aria-label="Glavna navigacija">
+            <Link className={styles.brand} href="/">
+              <span className={styles.brandMark} aria-hidden="true">
+                N
+              </span>
+              <span>
+                Next<span>Class</span>
+              </span>
+            </Link>
+
+            <div className={styles.navLinks}>
+              <Link href="/">Pocetna</Link>
+              <Link href="/about">Za nas</Link>
+              <Link href="/state-demo">UseState</Link>
+              <Link href="/effect-demo">UseEffect</Link>
+              <Link href="/form-demo">Forma</Link>
+              <Link href="/students">Studenti</Link>
+            </div>
           </nav>
         </header>
-        {children}
-        <h1>test</h1>
+
+        <div className={styles.content}>{children}</div>
+
+        <footer className={styles.footer}>
+          <div className={styles.footerContent}>
+            <div className={styles.footerIntro}>
+              <Link className={styles.footerBrand} href="/">
+                NextClass
+              </Link>
+              <p>Praktichni Next.js primeri za polesno uchenje i vezhbanje.</p>
+            </div>
+
+            <div className={styles.footerNavigation}>
+              <p className={styles.footerTitle}>Brzi linkovi</p>
+              <div className={styles.footerLinks}>
+                <Link href="/state-demo">State demo</Link>
+                <Link href="/effect-demo">Effect demo</Link>
+                <Link href="/form-demo">Form demo</Link>
+                <Link href="/students">Studenti</Link>
+              </div>
+            </div>
+          </div>
+
+          <div className={styles.footerBottom}>
+            <p>© 2026 NextClass</p>
+            <p>Izraboteno za SEMOS nastava</p>
+          </div>
+        </footer>
       </body>
     </html>
   );

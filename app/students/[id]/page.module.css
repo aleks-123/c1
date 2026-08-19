@@ -1,0 +1,96 @@
+.page {
+  min-height: 100vh;
+  padding: 64px 24px 80px;
+  color: #172554;
+  background:
+    radial-gradient(circle at 12% 10%, rgba(165, 180, 252, 0.48), transparent 30%),
+    radial-gradient(circle at 88% 88%, rgba(103, 232, 249, 0.34), transparent 28%),
+    linear-gradient(145deg, #eef2ff 0%, #f8fafc 52%, #ecfeff 100%);
+  color-scheme: light;
+}
+
+.profile {
+  width: min(100%, 820px);
+  margin: 0 auto;
+}
+
+.backLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 34px;
+  padding: 9px 13px;
+  border: 1px solid #c7d2fe;
+  border-radius: 10px;
+  color: #4338ca;
+  background: rgba(238, 242, 255, 0.9);
+  font-size: 13px;
+  font-weight: 800;
+  transition:
+    color 0.15s ease,
+    background-color 0.15s ease,
+    border-color 0.15s ease,
+    transform 0.15s ease;
+}
+
+.backLink:hover {
+  transform: translateX(-3px);
+  border-color: #4f46e5;
+  color: #ffffff;
+  background: #4f46e5;
+}
+
+.backLink:focus-visible {
+  outline: 3px solid #a5b4fc;
+  outline-offset: 3px;
+}
+
+.backLink span {
+  font-size: 17px;
+  line-height: 1;
+}
+
+.intro {
+  margin-bottom: 28px;
+}
+
+.eyebrow {
+  width: fit-content;
+  margin-bottom: 13px;
+  padding: 7px 12px;
+  border: 1px solid #c7d2fe;
+  border-radius: 999px;
+  color: #4338ca;
+  background: rgba(238, 242, 255, 0.88);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.intro h1 {
+  color: #1e1b4b;
+  font-size: clamp(36px, 7vw, 54px);
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+}
+
+.intro > p:last-child {
+  margin-top: 13px;
+  color: #64748b;
+  font-size: 15px;
+}
+
+.intro strong {
+  color: #4338ca;
+}
+
+@media (max-width: 560px) {
+  .page {
+    padding: 44px 16px 60px;
+  }
+
+  .backLink {
+    margin-bottom: 28px;
+  }
+}
