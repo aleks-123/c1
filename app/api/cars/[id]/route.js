@@ -37,4 +37,17 @@ export async function PUT(request, { params }) {
     return Response.json({ message: err.message }, { status: 500 });
   }
 }
-export async function DELETE() {}
+export async function DELETE(request, { params }) {
+  try {
+    await connectDB();
+    const { id } = await params;
+    const deletedCar = await Car.findByIdAndDelete(id);
+
+    if (!deletedCar) {
+      return Response.json({ message: "Kolata ne e pronajdena" }, { status: 404 });
+    }
+    return Response.json({ message: "Kolata e uspesno izbrisana" }, { status: 200 });
+  } catch (err) {
+    return Response.json({ message: err.message }, { status: 500 });
+  }
+}
