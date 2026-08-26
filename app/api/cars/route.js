@@ -1,9 +1,15 @@
+import { protect } from "@/lib/auth";
 import connectDB from "@/lib/mongodb";
 import Car from "@/models/Car";
 
 // GET http://localhost:3000/api/cars
-export async function GET() {
+export async function GET(request) {
   try {
+    const user = await protect(request);
+    if (!user) {
+      return Response.json({ message: "Ne ste najaveni" }, { status: 401 });
+    }
+
     await connectDB();
 
     const cars = await Car.find();
