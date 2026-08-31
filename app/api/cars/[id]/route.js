@@ -1,8 +1,14 @@
 import connectDB from "@/lib/mongodb";
 import Car from "@/models/Car";
+import { protect } from "@/lib/auth";
 
 export async function GET(request, { params }) {
   try {
+    const user = await protect(request);
+    if (!user) {
+      return Response.json({ message: "Ne ste najaveni" }, { status: 401 });
+    }
+
     await connectDB();
 
     const { id } = await params;
@@ -19,6 +25,11 @@ export async function GET(request, { params }) {
 }
 export async function PUT(request, { params }) {
   try {
+    const user = await protect(request);
+    if (!user) {
+      return Response.json({ message: "Ne ste najaveni" }, { status: 401 });
+    }
+
     await connectDB();
     const { id } = await params;
     const body = await request.json();

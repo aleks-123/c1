@@ -23,6 +23,10 @@ export async function GET(request) {
 // POST http://localhost:3000/api/cars
 export async function POST(request) {
   try {
+    const user = await protect(request);
+    if (!user) {
+      return Response.json({ message: "Ne ste najaveni" }, { status: 401 });
+    }
     console.log(request.method);
     console.log(request.url);
     console.log(request.headers);

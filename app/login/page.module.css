@@ -1,0 +1,136 @@
+.page {
+  display: grid;
+  min-height: calc(100vh - 72px);
+  place-items: center;
+  padding: 64px 24px;
+  color: #172554;
+  background:
+    radial-gradient(circle at 15% 10%, rgba(165, 180, 252, 0.48), transparent 30%),
+    radial-gradient(circle at 85% 85%, rgba(103, 232, 249, 0.34), transparent 28%),
+    linear-gradient(145deg, #eef2ff 0%, #f8fafc 52%, #ecfeff 100%);
+  color-scheme: light;
+}
+
+.card {
+  width: min(100%, 440px);
+  padding: 38px;
+  border: 1px solid rgba(99, 102, 241, 0.14);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 24px 70px rgba(49, 46, 129, 0.16);
+}
+
+.intro {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.eyebrow {
+  margin-bottom: 8px;
+  color: #4f46e5;
+  font-size: 13px;
+  font-weight: 850;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.intro h1 {
+  margin-bottom: 10px;
+  color: #1e1b4b;
+  font-size: clamp(34px, 8vw, 46px);
+  line-height: 1;
+  letter-spacing: -0.04em;
+}
+
+.intro > p:last-child {
+  color: #64748b;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.form {
+  display: grid;
+  gap: 20px;
+}
+
+.field {
+  display: grid;
+  gap: 8px;
+}
+
+.field label {
+  color: #312e81;
+  font-size: 14px;
+  font-weight: 750;
+}
+
+.field input {
+  width: 100%;
+  padding: 13px 14px;
+  border: 1px solid #cbd5e1;
+  border-radius: 11px;
+  outline: none;
+  color: #0f172a;
+  background: #ffffff;
+  font: inherit;
+  transition:
+    border-color 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.field input:focus {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.14);
+}
+
+.error {
+  padding: 11px 13px;
+  border: 1px solid #fecaca;
+  border-radius: 10px;
+  color: #b91c1c;
+  background: #fef2f2;
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.form button {
+  min-height: 48px;
+  border: 0;
+  border-radius: 11px;
+  color: #ffffff;
+  background: linear-gradient(135deg, #4f46e5, #312e81);
+  box-shadow: 0 10px 24px rgba(79, 70, 229, 0.24);
+  cursor: pointer;
+  font: inherit;
+  font-weight: 800;
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease,
+    opacity 0.15s ease;
+}
+
+.form button:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 13px 28px rgba(79, 70, 229, 0.3);
+}
+
+.form button:focus-visible {
+  outline: 3px solid #22d3ee;
+  outline-offset: 3px;
+}
+
+.form button:disabled {
+  cursor: wait;
+  opacity: 0.68;
+}
+
+@media (max-width: 520px) {
+  .page {
+    min-height: auto;
+    padding: 44px 16px;
+  }
+
+  .card {
+    padding: 30px 22px;
+  }
+}

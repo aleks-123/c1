@@ -21,3 +21,17 @@ export function proxy(request) {
 export const config = {
   matcher: ["/cars/:path*"],
 };
+
+("/api/cars");
+
+//!  /cars/:path* /cars i site podruti
+//!  /cars/:path+. /cars ne e opfatena samo nejzinite podruti
+//!  /cars/:path /samo edno nivo na podruta
+
+// localhost:3000/cars
+// localhost:3000/cars/123
+// localhost:3000/cars/sdkgnaskgnsdag/dsagsadgasg
+
+// ////////////////////
+// navigacija.  home, contact, , users      login
+// navigacija.  home, contact, cars , users      logout

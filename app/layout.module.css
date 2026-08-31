@@ -79,6 +79,31 @@
   outline-offset: 3px;
 }
 
+.authActions {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 10px;
+}
+
+.authActions > a {
+  padding: 9px 12px;
+  border-radius: 9px;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 750;
+  transition: background-color 0.15s ease;
+}
+
+.authActions > a:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.authActions > a:focus-visible {
+  outline: 3px solid #67e8f9;
+  outline-offset: 3px;
+}
+
 .content {
   flex: 1;
 }
@@ -176,6 +201,10 @@
     overflow-x: auto;
     padding-bottom: 2px;
     scrollbar-width: none;
+  }
+
+  .authActions {
+    width: 100%;
   }
 
   .navLinks::-webkit-scrollbar {
