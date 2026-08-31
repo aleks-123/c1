@@ -1,0 +1,244 @@
+.page {
+  min-height: 100vh;
+  padding: 72px 24px;
+  color: #172554;
+  background:
+    radial-gradient(circle at 12% 8%, rgba(165, 180, 252, 0.5), transparent 30%),
+    radial-gradient(circle at 88% 90%, rgba(103, 232, 249, 0.35), transparent 28%),
+    linear-gradient(145deg, #eef2ff 0%, #f8fafc 52%, #ecfeff 100%);
+  color-scheme: light;
+}
+
+.directory {
+  width: min(100%, 1080px);
+  margin: 0 auto;
+}
+
+.intro {
+  width: min(100%, 720px);
+  margin-bottom: 38px;
+}
+
+.eyebrow {
+  width: fit-content;
+  margin-bottom: 14px;
+  padding: 7px 12px;
+  border: 1px solid #c7d2fe;
+  border-radius: 999px;
+  color: #4338ca;
+  background: rgba(238, 242, 255, 0.88);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.intro h1 {
+  color: #1e1b4b;
+  font-size: clamp(38px, 7vw, 62px);
+  line-height: 1.02;
+  letter-spacing: -0.045em;
+}
+
+.description {
+  margin-top: 18px;
+  color: #475569;
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+.carCount {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  margin-top: 24px;
+  padding: 9px 14px;
+  border: 1px solid #bae6fd;
+  border-radius: 12px;
+  color: #0e7490;
+  background: rgba(236, 254, 255, 0.9);
+  font-size: 14px;
+  font-weight: 750;
+}
+
+.carCount strong {
+  display: grid;
+  min-width: 28px;
+  height: 28px;
+  place-items: center;
+  border-radius: 8px;
+  color: #ffffff;
+  background: #0891b2;
+}
+
+.carGrid,
+.loadingGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.carCard {
+  display: flex;
+  min-height: 250px;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 25px;
+  border: 1px solid rgba(99, 102, 241, 0.14);
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 16px 42px rgba(49, 46, 129, 0.1);
+  transition:
+    border-color 0.18s ease,
+    box-shadow 0.18s ease,
+    transform 0.18s ease;
+}
+
+.carCard:hover {
+  transform: translateY(-5px);
+  border-color: rgba(79, 70, 229, 0.35);
+  box-shadow: 0 22px 50px rgba(49, 46, 129, 0.16);
+}
+
+.cardTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.carIcon {
+  display: grid;
+  width: 52px;
+  height: 52px;
+  place-items: center;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #e0e7ff, #cffafe);
+  font-size: 26px;
+}
+
+.year {
+  padding: 7px 10px;
+  border-radius: 999px;
+  color: #4338ca;
+  background: #eef2ff;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.carName {
+  margin-block: 30px;
+}
+
+.carName p {
+  margin-bottom: 5px;
+  color: #6366f1;
+  font-size: 13px;
+  font-weight: 850;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.carName h2 {
+  color: #1e1b4b;
+  font-size: 27px;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+}
+
+.colorRow {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding-top: 17px;
+  border-top: 1px solid #e2e8f0;
+  color: #64748b;
+  font-size: 14px;
+  font-weight: 650;
+}
+
+.colorDot {
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  box-shadow: 0 0 0 1px #cbd5e1;
+}
+
+.skeleton {
+  min-height: 250px;
+  border-radius: 22px;
+  background: linear-gradient(90deg, #e2e8f0 25%, #f8fafc 50%, #e2e8f0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.25s ease-in-out infinite;
+}
+
+.error,
+.emptyState {
+  padding: 34px;
+  border-radius: 20px;
+  text-align: center;
+}
+
+.error {
+  border: 1px solid #fecaca;
+  color: #b91c1c;
+  background: #fef2f2;
+  font-weight: 700;
+}
+
+.emptyState {
+  border: 1px dashed #a5b4fc;
+  color: #475569;
+  background: rgba(255, 255, 255, 0.75);
+}
+
+.emptyState span {
+  display: block;
+  margin-bottom: 12px;
+  font-size: 38px;
+}
+
+.emptyState h2 {
+  margin-bottom: 8px;
+  color: #1e1b4b;
+}
+
+@keyframes loading {
+  to {
+    background-position: -200% 0;
+  }
+}
+
+@media (max-width: 900px) {
+  .carGrid,
+  .loadingGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 620px) {
+  .page {
+    padding: 48px 16px;
+  }
+
+  .intro {
+    margin-bottom: 28px;
+  }
+
+  .carGrid,
+  .loadingGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .carCard {
+    transition: none;
+  }
+
+  .skeleton {
+    animation-duration: 2.5s;
+  }
+}
