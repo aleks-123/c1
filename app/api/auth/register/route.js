@@ -1,5 +1,6 @@
 import User from "@/models/User";
 import connectDB from "@/lib/mongodb";
+import sendEmail from "@/lib/sendEmail";
 
 // POST /api/auth/register
 export async function POST(request) {
@@ -13,6 +14,16 @@ export async function POST(request) {
     await connectDB();
 
     const newUser = await User.create({ name, email, password });
+
+    await sendEmail({
+      email: newUser.email,
+      subject: "Uspesna registracija na nashiot portal",
+      message: `Zdravo ${newUser.name}, uspesno se registriravte vo nashata platforma, iskoristete 20 posto vaucer za dobredojde`,
+      htmlMessage: `
+        <h2>Zdravo ${newUser.name}</h2>
+        <p>uspesno se registriravte vo nashata platforma, iskoristete 20 posto vaucer za dobredojde</p>
+      `,
+    });
 
     return Response.json(
       {
