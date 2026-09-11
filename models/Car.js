@@ -20,6 +20,14 @@ const carSchema = new mongoose.Schema(
       type: String,
       trim: true,
     },
+    image: {
+      type: String,
+      default: "",
+    },
+    images: {
+      type: [String],
+      default: [],
+    },
   },
   { timestamps: true },
 );
