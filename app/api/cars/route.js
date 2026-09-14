@@ -59,12 +59,11 @@ export async function POST(request) {
       const filename = await saveImage(file);
       if (filename) car.images.push(filename);
     }
-
     /////
 
     await car.save();
 
-    return Response.json("test", { status: 201 });
+    return Response.json(car, { status: 201 });
   } catch (err) {
     return Response.json({ message: err.message }, { status: 500 });
   }
