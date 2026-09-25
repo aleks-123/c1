@@ -10,11 +10,6 @@ export const metadata = {
 export default async function page() {
   const students = await getStudents();
 
-  const testENV = process.env.PRIVATE_SPOTIFY_KEY;
-
-  console.log(process.env);
-  console.log(testENV);
-
   return (
     <main className={styles.page}>
       <section className={styles.directory}>
