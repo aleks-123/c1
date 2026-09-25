@@ -1,19 +1,49 @@
+import qs from "qs";
 import { protect } from "@/lib/auth";
 import connectDB from "@/lib/mongodb";
 import { saveImage } from "@/lib/uploadImages";
 import Car from "@/models/Car";
 
 // GET http://localhost:3000/api/cars
+// GET http://localhost:3000/api/cars?brand=BMW
+// GET http://localhost:3000/api/cars?color=white
+// GET http://localhost:3000/api/cars?year=2010
+// GET http://localhost:3000/api/cars?year[gte]=2010
+// GET http://localhost:3000/api/cars?year[gte]=2010&year[lte]=2020
+// GET http://localhost:3000/api/cars?year[gte]=2010&year[lte]=2020&page=2&limit=10
+
 export async function GET(request) {
   try {
     const user = await protect(request);
     if (!user) {
       return Response.json({ message: "Ne ste najaveni" }, { status: 401 });
     }
+    console.log(request.nextUrl.searchParams.toString());
+
+    const queryObj = qs.parse(request.nextUrl.searchParams.toString());
+    console.log(queryObj);
+
+    const page = Math.max(1, parseInt(queryObj.page, 10) || 1);
+    const limit = Math.max(1, parseInt(queryObj.limit, 10) || 30);
+
+    delete queryObj.page;
+    delete queryObj.limit;
+
+    console.log(queryObj);
+
+    let queryString = JSON.stringify(queryObj);
+    console.log(queryString);
+    queryString = queryString.replace(/"(gte|gt|lte|lt)":/g, (match, operator) => `"$${operator}":`);
+    console.log(queryString);
+    const query = JSON.parse(queryString);
 
     await connectDB();
 
-    const cars = await Car.find();
+    // strana 2 so limit 4: preskikni gi prvite (2 - 1) * 4 = 4 koli
+
+    const skip = (page - 1) * limit;
+
+    const cars = await Car.find(query).sort({ createdAt: -1, _id: -1 }).limit(limit).skip(skip);
 
     return Response.json(cars, { status: 200 });
   } catch (err) {
